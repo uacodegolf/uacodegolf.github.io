@@ -3,8 +3,19 @@
 <html>
   <head>
 	<title>
-	  UACG: <%= tagline %>x
+	  UACG: <%= tagline %>
 	</title>
+	<style>
+	  * {
+		  box-sizing: border-box;
+	  }
+	  pre {
+		  white-space: pre-wrap;
+		  width: 100%;
+		  padding-left: 2em;
+		  padding-right: 2em;
+	  }
+	</style>
   </head>
   <body>
 	<h1>
@@ -28,7 +39,7 @@
 		Submissions closed on <%= closes_on %>	  
 	  </h2>
 	<% end %>
-	<%= content %>
+	<pre><%= content %></pre>
 	<% if current %>
 	  <p>
 		Submit all entries to <a href="mailto:email@email?subject=[SUBMISSION] Challenge <%= number %> <your language>">email@email</a> with the subject line "[SUBMISSION] Challenge <%= number %> &lt;your language&gt;". If you do not do this, <strong>we will not count your submission!</strong>
