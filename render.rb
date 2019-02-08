@@ -2,6 +2,8 @@
 
 require "erb"
 
-Dir["*.erb"].each do |pathname|
-  File.write(File.basename(pathname, ".erb"), ERB.new(File.read pathname).result)
+Dir["**/*.erb"].each do |fullpath|
+  dirname = File.dirname fullpath
+  filename = File.basename fullpath, ".erb"
+  File.write(File.join(dirname, filename), ERB.new(File.read fullpath).result)
 end
