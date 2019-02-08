@@ -40,13 +40,14 @@ Hey! If you're interested in working with us to organize this competition, have 
 		  font-size: 0.6em;
 	  }
 	  .challenge {
-		  white-space: pre-line;
+		  //white-space: pre-line;
 		  display: block;
 		  background-color: rgba(140, 140, 240, 0.5);
 		  margin-top: 1em;
 		  margin-left: 2em;
 		  margin-right: 2em;
-		  padding: 1em;
+		  padding-top: 1em;
+		  padding-bottom: 0.5em;
 	  }
 	</style>
   </head>
@@ -70,11 +71,15 @@ Hey! If you're interested in working with us to organize this competition, have 
 	    <% if data["current"] %>
 		  <div class="challenge">
 			<a href="challenges/<%= File.basename(fullpath, '.yaml') %>.html">
-			  <b>Challenge <%= data["number"] %> </b>
+			  <b>Challenge <%= data["number"] %>:</b>
 			</a>
 			<i>"<%= data["tagline"] %>"</i>
-			Submissions open on <%= data["opens_on"] %>
-			Submissions close on <%= data["closes_on"] %>
+			<p>
+			  Submissions open on <%= data["opens_on"] %>
+			</p>
+			<p>
+			  Submissions close on <%= data["closes_on"] %>
+			</p>
 		  </div>
 		<% end %>
 	  <% end %>
@@ -86,11 +91,16 @@ Hey! If you're interested in working with us to organize this competition, have 
 		<% if !data["current"] %>
 		  <div class="challenge">
 			<a href="challenges/<%= File.basename(fullpath, '.yaml') %>.html">
-			  <b>Challenge <%= data["number"] %> </b>
+			  <b>Challenge <%= data["number"] %>:</b>
 			</a>
 			<i>"<%= data["tagline"] %>"</i>
-			Submissions opened on <%= data["opens_on"] %>
-			Submissions closed on <%= data["closes_on"] %>
+			<p>
+			  Submissions opened on <%= data["opens_on"] %>
+			</p>
+			<p>
+			  Submissions closed on <%= data["closes_on"] %>
+			</p>
+		  </div>
 		  </div>
  		<% end %>
 	  <% end %>
