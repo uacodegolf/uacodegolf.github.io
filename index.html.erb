@@ -9,24 +9,25 @@ Hey! If you're interested in working with us to organize this competition, have 
 	<title>
 	  UA Code Golf 2019
 	</title>
-	<script type="text/javascript" src="live.js"></script>
+	<!--<script type="text/javascript" src="live.js"></script>-->
 	<style>
 	  * {
 		  font-family: sans-serif;
 	  }
 	  body {
 		  text-align: center;
-		  background: no-repeat url("icon_fullsize.png");
+		  background: no-repeat url("background.png");
+		  background-size: cover;
+		  background-position: center top;
 	  }
 	  main {
-		  background-color: rgba(255, 255, 255, 0.5);
+		  background-color: rgba(255, 255, 255, 0.8);
 		  box-shadow: 0 0 10px black;
 		  max-width: 80em;
 		  width: 70%;
 		  min-width: 40em;
 		  margin: 0 auto;
-		  padding-top: 2em;
-		  padding-bottom: 2em;
+		  padding: 2em;
 	  }
 	  h1, h2, h3, h4 {
 		  margin-top: 0.2em;
@@ -35,6 +36,9 @@ Hey! If you're interested in working with us to organize this competition, have 
 	  p {
 		  //margin-top: 0.2em;
 		  //margin-bottom: 0.2em;
+	  }
+	  hr {
+		  width: 80%;
 	  }
 	  .disclaimer {
 		  font-size: 0.6em;
@@ -62,6 +66,25 @@ Hey! If you're interested in working with us to organize this competition, have 
 	  <h2>
 		Spring 2019 Season
 	  </h2>
+	  <hr>
+	  <h3>
+		What is Code Golf?
+	  </h3>
+	  <p>
+		In a single sentence: write the shortest, nastiest code possible to win challenges!
+	  </p>
+	  <p>
+		As per <a href="https://en.wikipedia.org/wiki/Code_golf">Wikipedia</a>, code golf is "a type of recreational computer programming competition in which participants strive to achieve the shortest possible source code that implements a certain algorithm." In the early days of computing, code golf started on Usenet boards as a way to establish your skill as a programmer. Now, though, the tradition lives on in the form of friendly competition.
+	  </p>
+	  <p>
+		Here's how it works:
+	  </p>
+	  <p>
+		Below, there are <i>challenges</i> posted by date. You may use any programming language you wish to complete these challenges. Once the challenge closes, we will score each entry by a couple of categories. One category will always be the length of the entry -- the shortest entry for each challenge will be crowned ultimately victorious. Then, we may announce other winning entries by whatever criteria seem fit for the challenge à la the IOCCC. These winning entries, along with other notable mentions, will be published at the end of each challenge.
+	  </p>
+	  <p>
+		At the end of the day, we are all here to have fun and share interesting code. So, don't be afraid to submit your programs and ideas! Whether you're a young beginner or a seasoned hacker, you're welcome to participate in our challenges.
+	  </p>
 	  <h3>
 		Current Challenge
 	  </h3>
@@ -101,10 +124,15 @@ Hey! If you're interested in working with us to organize this competition, have 
 			  Submissions closed on <%= data["closes_on"] %>
 			</p>
 		  </div>
-		  </div>
  		<% end %>
 	  <% end %>
-	</main>
+	  <h3>
+		About Us
+	  </h3>
+	  <div>
+		Direct any questions and suggestions for challenges you have to our GitHub organization located here: <a href="https://github.com/uacodegolf">https://github.com/uacodegolf</a>
+	  </div>
+    </main>
   </body>
 </html>
 

@@ -3,7 +3,7 @@
 <html>
   <head>
 	<title>
-	  UACG: <%= tagline %>
+	  UACG: <%= tagline %>x
 	</title>
   </head>
   <body>
@@ -29,12 +29,14 @@
 	  </h2>
 	<% end %>
 	<%= content %>
-	<p>
-	  Submit all entries to <a href="mailto:email@email?subject=[SUBMISSION] Challenge <%= number %> <your language>">email@email</a> with the subject line "[SUBMISSION] Challenge <%= number %> &lt;your language&gt;". If you do not do this, <strong>we will not count your submission!</strong>
-	</p>
-	<p>
-	  You must have a valid @email.arizona.edu email address to submit an entry. We will count the final version if multiple versions are sent from a single address.
-	</p>
+	<% if current %>
+	  <p>
+		Submit all entries to <a href="mailto:email@email?subject=[SUBMISSION] Challenge <%= number %> <your language>">email@email</a> with the subject line "[SUBMISSION] Challenge <%= number %> &lt;your language&gt;". If you do not do this, <strong>we will not count your submission!</strong>
+	  </p>
+	  <p>
+		You must have a valid @email.arizona.edu email address to submit an entry. We will count the final version if multiple versions are sent from a single address.
+	  </p>
+	<% end %>
   </body>
 </html>
   
