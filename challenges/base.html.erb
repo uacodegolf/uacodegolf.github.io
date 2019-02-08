@@ -1,0 +1,40 @@
+<meta charset="utf-8">
+
+<html>
+  <head>
+	<title>
+	  UACG: <%= tagline %>
+	</title>
+  </head>
+  <body>
+	<h1>
+	  Challenge <%= number %>: <i>"<%= tagline %>"</i>
+	</h1>
+	<% if current %>
+	  <h2>
+		Submissions open on <%= opens_on %>	  
+	  </h2>
+	  <h2>
+		Submissions close on <%= closes_on %>	  
+	  </h2>
+	<% else %>
+	  <h2>
+		The submissions are no longer open for this challenge.
+	  </h2>
+	  <h2>
+		Submissions opened on <%= opens_on %>	  
+	  </h2>
+	  <h2>
+		Submissions closed on <%= closes_on %>	  
+	  </h2>
+	<% end %>
+	<%= content %>
+	<p>
+	  Submit all entries to <a href="mailto:email@email?subject=[SUBMISSION] Challenge <%= number %> <your language>">email@email</a> with the subject line "[SUBMISSION] Challenge <%= number %> &lt;your language&gt;". If you do not do this, <strong>we will not count your submission!</strong>
+	</p>
+	<p>
+	  You must have a valid @email.arizona.edu email address to submit an entry. We will count the final version if multiple versions are sent from a single address.
+	</p>
+  </body>
+</html>
+  

@@ -1,7 +1,7 @@
 <!--
 Hey! If you're interested in working with us to organize this competition, have ideas for future problems, or just want to drop us a line: check us out at https://github.com/uacodegolf or email me at tslimkemann@email.arizona.edu.
 -->
-
+<% require "yaml" %>
 <meta charset="utf-8">
 
 <html>
@@ -39,7 +39,7 @@ Hey! If you're interested in working with us to organize this competition, have 
 	  .disclaimer {
 		  font-size: 0.6em;
 	  }
-	  .problem {
+	  .challenge {
 		  white-space: pre-line;
 		  display: block;
 		  background-color: rgba(140, 140, 240, 0.5);
@@ -62,18 +62,38 @@ Hey! If you're interested in working with us to organize this competition, have 
 		Spring 2019 Season
 	  </h2>
 	  <h3>
-		Current Problem
+		Current Challenge
 	  </h3>
-	  Click on any of the problems listed below to be shown more information.
-	  <a class="problem">
-		<b>Problem 1</b>
-		<i>"Catchy Tagline"</i>
-		Submissions open on MM/DD/YYYY
-		Submissions close on MM/DD/YYYY
-	  </a>
+	  Click on any of the challenges listed below to be shown more information.
+	  <% Dir["challenges/*.yaml"].each do |fullpath| %>
+	    <% data = YAML::load_file fullpath; %>
+	    <% if data["current"] %>
+		  <div class="challenge">
+			<a href="challenges/<%= File.basename(fullpath, '.yaml') %>.html">
+			  <b>Challenge <%= data["number"] %> </b>
+			</a>
+			<i>"<%= data["tagline"] %>"</i>
+			Submissions open on <%= data["opens_on"] %>
+			Submissions close on <%= data["closes_on"] %>
+		  </div>
+		<% end %>
+	  <% end %>
 	  <h3>
-		Archived Problems
+		Archived Challenges
 	  </h3>
+	  <% Dir["challenges/*.yaml"].each do |fullpath| %>
+	    <% data = YAML::load_file fullpath %>
+		<% if !data["current"] %>
+		  <div class="challenge">
+			<a href="challenges/<%= File.basename(fullpath, '.yaml') %>.html">
+			  <b>Challenge <%= data["number"] %> </b>
+			</a>
+			<i>"<%= data["tagline"] %>"</i>
+			Submissions opened on <%= data["opens_on"] %>
+			Submissions closed on <%= data["closes_on"] %>
+		  </div>
+ 		<% end %>
+	  <% end %>
 	</main>
   </body>
 </html>

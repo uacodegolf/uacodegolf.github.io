@@ -1,0 +1,7 @@
+number: 1
+tagline: Opening Night
+current: True
+opens_on: MM/DD/YYYY
+closes_on: MM/DD/YYYY
+content: |
+  <u>This is the content of the challenge</u>
